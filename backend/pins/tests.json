@@ -12,9 +12,29 @@
       "path": "/",
       "body": {
         "action": "create",
+        "title": "Test Pin",
+        "description": "Test description",
         "content": "Test pin content"
       },
       "expectedStatus": 201
+    },
+    {
+      "name": "Add comment to pin",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "comment",
+        "pin_id": 1,
+        "username": "TestUser",
+        "content": "Great pin!"
+      },
+      "expectedStatus": 201
+    },
+    {
+      "name": "Get single pin with comments",
+      "method": "GET",
+      "path": "/?id=1",
+      "expectedStatus": 200
     },
     {
       "name": "Like a pin",
